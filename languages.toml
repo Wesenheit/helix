@@ -33,22 +33,24 @@ command = "clangd"
 args = ["--background-index", "--clang-tidy", "--completion-style=detailed"]
 
 
-[language-server.gopls]
-command = "gopls"
-args = ["serve"]
-
-[language-server.gopls.config]
-usePlaceholders = true
-completeUnimported = true
-staticcheck = true
-gofumpt = true
-
 [[language]]
 name = "go"
-language-servers = ["gopls"]
 auto-format = true
-formatter = { command = "goimports" }
+formatter = { command = "gofumpt" } 
 
+[language-server.gopls.config]
+"ui.diagnostic.staticcheck" = true
+"ui.completion.usePlaceholders" = true
+"ui.navigation.importShortcut" = "Both"
+
+[language-server.gopls.config.hints]
+assignVariableTypes = true
+compositeLiteralFields = true
+compositeLiteralTypes = true
+constantValues = true
+functionTypeParameters = true
+parameterNames = true
+rangeVariableTypes = true
 
 [language-server.tinymist]
 command = "tinymist"
