@@ -1,0 +1,100 @@
+[[language]]
+name = "rust"
+auto-format = false
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[language-server.ruff]
+command = "ruff-lsp"
+
+[[language]]
+name = "python"
+language-servers = ["pyright", "ruff"]
+formatter = { command = "ruff", args = ["format", "--stdin-filename", "file.py", "-"] }
+auto-format = true
+roots = ["pyproject.toml", "setup.py", "poetry.lock", "requirements.txt", ".git"]
+
+[[language]]
+name = "c"
+language-servers = ["clangd"]
+formatter = { command = "clang-format", args = ["--style=file"] }
+auto-format = true
+
+[[language]]
+name = "cpp"
+language-servers = ["clangd"]
+formatter = { command = "clang-format", args = ["--style=file"] }
+auto-format = true
+
+[language-server.clangd]
+command = "clangd"
+args = ["--background-index", "--clang-tidy", "--completion-style=detailed"]
+
+
+[language-server.gopls]
+command = "gopls"
+args = ["serve"]
+
+[language-server.gopls.config]
+usePlaceholders = true
+completeUnimported = true
+staticcheck = true
+gofumpt = true
+
+[[language]]
+name = "go"
+language-servers = ["gopls"]
+auto-format = true
+formatter = { command = "goimports" }
+
+
+[language-server.tinymist]
+command = "tinymist"
+config = { exportPdf = "onSave", outputPath = "$root/target/$dir/$name" }
+
+[[language]]
+name = "typst"
+scope = "source.typst"
+injection-regex = "typst"
+file-types = ["typ"]
+comment-token = "//"
+indent = { tab-width = 2, unit = " " }
+language-servers = ["tinymist"]
+formatter = { command = "typstyle" }
+auto-format = true
+
+
+# LaTeX Configuration
+[language-server.texlab]
+command = "texlab"
+
+[language-server.texlab.config.texlab]
+build.executable = "latexmk"
+build.args = ["-pdf", "-interaction=nonstopmode", "-synctex=1", "%f"]
+build.onSave = true
+
+[[language]]
+name = "latex"
+language-servers = ["texlab"]
+file-types = ["tex", "latex", "cls", "sty"]
+roots = ["main.tex", "*.tex"]
+
+[language-server.marksman]
+command = "marksman"
+args = ["server"]
+
+[[language]]
+name = "markdown"
+language-servers = ["marksman"]
+formatter = { command = "prettier", args = ["--parser", "markdown"] }
+
+[[language]]
+name = "ocaml"
+formatter = { command = "ocamlformat", args = [
+  "-",
+  "--impl",
+  # "--enable-outside-detected-project", # Enable only if you want to format files outside of projects
+] }
+auto-format = true

@@ -1,0 +1,32 @@
+theme = "papercolor-dark" 
+
+[editor]
+line-number = "absolute"       
+mouse = true                   
+middle-click-paste = false 
+scroll-lines = 3              
+shell = ["zsh", "-c"]
+auto-save = true               
+idle-timeout = 250
+completion-trigger-len = 2
+auto-completion = true
+auto-format = true
+auto-pairs = true
+color-modes = true
+cursorline = true
+gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+center = ["file-type"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending"]
+
+[keys.normal]
+S-g = ':sh zellij run -f -x 5%% -y 5%% --width 90%% --height 90%% -- sh -c "lazygit && zellij action close-pane"'
+C-s = ":write"
+C-q = ":quit"
+C-o = "file_picker"
+C-n = ":new"
+C-w = ":buffer-close"
+C-d = ":theme papercolor-dark"
+C-l = ":theme papercolor-light"
