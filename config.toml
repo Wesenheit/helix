@@ -22,6 +22,7 @@ center = ["file-type"]
 right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending"]
 
 [keys.normal]
+S-f = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 S-g = ':sh zellij run -f -x 5%% -y 5%% --width 90%% --height 90%% -- sh -c "lazygit && zellij action close-pane"'
 C-s = ":write"
 C-q = ":quit"
