@@ -23,7 +23,7 @@ right = ["diagnostics", "selections", "position", "file-encoding", "file-line-en
 
 [keys.normal]
 S-f = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
-S-g = ':sh zellij run -f -x 5%% -y 5%% --width 90%% --height 90%% -- sh -c "lazygit && zellij action close-pane"'
+S-g = ":sh tmux display-popup -d \"#{pane_current_path}\" -w 90% -h 90% -E lazygit"
 C-s = ":write"
 C-q = ":quit"
 C-o = "file_picker"
