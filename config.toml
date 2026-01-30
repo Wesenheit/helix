@@ -1,4 +1,4 @@
-theme = "papercolor-dark" 
+theme = "ayu_dark" 
 
 [editor]
 line-number = "absolute"       
@@ -29,6 +29,6 @@ C-q = ":quit"
 C-o = "file_picker"
 C-n = ":new"
 C-w = ":buffer-close"
-C-d = ":theme papercolor-dark"
-C-l = ":theme papercolor-light"
+C-d = ":theme ayu_dark"
+C-l = ":theme ayu_light"
 S-y = ":sh zellij run -fc -- yazi"
