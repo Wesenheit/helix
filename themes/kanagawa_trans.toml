@@ -1,0 +1,10 @@
+inherits = "kanagawa"
+
+"ui.background" = { bg = "none" }
+"ui.help" = { bg = "none" }
+"ui.menu" = { bg = "none" }
+"ui.popup" = { bg = "none" }
+"ui.statusline" = { bg = "none" }
+"ui.linenr" = { bg = "none" }
+"ui.linenr.selected" = { bg = "none" }
+"ui.gutter" = { bg = "none" }
