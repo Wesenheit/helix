@@ -34,3 +34,7 @@ C-l = ":theme eiffel_trans"
 C-h = ":theme heisenberg"
 C-k = ":theme kanagawa_trans"
 S-y = ":sh zellij run -fc -- yazi"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+other-lines = "warning"

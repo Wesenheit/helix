@@ -1,6 +1,7 @@
 [[language]]
 name = "rust"
-auto-format = false
+formatter = { command = "rustfmt", args = ["--edition", "2021"] }
+auto-format = true
 
 [language-server.pyright]
 command = "pyright-langserver"
