@@ -17,9 +17,9 @@ cursorline = true
 gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
 
 [editor.statusline]
-left = ["mode", "spinner", "file-name"]
-center = ["file-type"]
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending"]
+left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-type"] # Changed language-id to file-type
+separator = "│"
 
 [keys.normal]
 S-f = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
@@ -27,13 +27,18 @@ S-g = ":sh tmux display-popup -d \"#{pane_current_path}\" -w 90% -h 90% -E lazyg
 C-s = ":write"
 C-q = ":quit"
 C-o = "file_picker"
-C-n = ":new"
 C-w = ":buffer-close"
 C-d = ":theme ao"
 C-l = ":theme eiffel_trans"
 C-h = ":theme heisenberg"
 C-k = ":theme kanagawa_trans"
 S-y = ":sh zellij run -fc -- yazi"
+
+"C-n" = "goto_previous_buffer"
+"C-m" = "goto_next_buffer"
+
+"X" = "extend_line_above"
+"G" = "goto_file_end"
 
 [editor.inline-diagnostics]
 cursor-line = "warning"
