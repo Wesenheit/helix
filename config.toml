@@ -1,4 +1,4 @@
-theme = "ao" 
+theme = "tokyonight" 
 
 [editor]
 line-number = "absolute"       
@@ -28,8 +28,8 @@ C-s = ":write"
 C-q = ":quit"
 C-o = "file_picker"
 C-w = ":buffer-close"
-C-d = ":theme ao"
-C-l = ":theme eiffel_trans"
+C-d = ":theme tokyonight"
+C-l = ":theme bogster_light"
 C-h = ":theme heisenberg"
 C-k = ":theme kanagawa_trans"
 S-y = ":sh zellij run -fc -- yazi"
