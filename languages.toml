@@ -1,6 +1,8 @@
+
 [[language]]
 name = "rust"
-auto-format = false
+auto-format = true
+formatter = { command = "rustfmt", args = ["--emit=stdout", "--edition=2021"] }
 
 [language-server.pyright]
 command = "pyright-langserver"
@@ -8,6 +10,10 @@ args = ["--stdio"]
 
 [language-server.ruff]
 command = "ruff-lsp"
+
+[[language]]
+name = "julia"
+auto-format = true
 
 [[language]]
 name = "python"
